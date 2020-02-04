@@ -23,7 +23,7 @@ class RegisterViewController: UIViewController {
                     print(err)
                 } else {
                     //Navigate to ChatVC
-                    self.performSegue(withIdentifier: "RegisterToChat", sender: self)
+                    self.performSegue(withIdentifier: K.registerSegue, sender: self)
                     
                 }
             }
