@@ -25,7 +25,7 @@ class WelcomeViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        viewDidDisappear(animated)
+        super.viewDidDisappear(animated)
         //MARK: Appends Navbar when leaving this VC
         navigationController?.isNavigationBarHidden = false
     }
