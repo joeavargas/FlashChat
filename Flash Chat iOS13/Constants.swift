@@ -1,10 +1,4 @@
-//
-//  Constants.swift
-//  Flash Chat iOS13
-//
-//  Created by Joe Vargas on 2/4/20.
-//  Copyright © 2020 Angela Yu. All rights reserved.
-//
+
 
 //MARK: Types derived from properites that are constantly used.
 
