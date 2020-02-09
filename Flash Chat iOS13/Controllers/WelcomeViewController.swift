@@ -18,6 +18,18 @@ class WelcomeViewController: UIViewController {
        titleTextAnimation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //MARK: Remove Navbar from this VC
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        viewDidDisappear(animated)
+        //MARK: Appends Navbar when leaving this VC
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     private func titleTextAnimation(){
         
         titleLabel.text = ""
