@@ -53,6 +53,10 @@ class ChatViewController: UIViewController {
                             
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                
+                                //MARK: Auto scroll to the latest message when loading app or submitting new messages
+                                let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                             }
                         }
                     }
@@ -73,10 +77,11 @@ class ChatViewController: UIViewController {
                     print("There was an issue saving data, \(e)")
                 } else {
                     print("Data was successfully saved to Firestore")
+                    self.messageTextfield.text = ""
                 }
             }
         }
-        messageTextfield.text = ""
+        
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
