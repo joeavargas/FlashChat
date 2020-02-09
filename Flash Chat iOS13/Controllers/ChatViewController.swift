@@ -76,7 +76,7 @@ class ChatViewController: UIViewController {
                 }
             }
         }
-        
+        messageTextfield.text = ""
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
