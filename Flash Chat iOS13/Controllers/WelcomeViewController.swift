@@ -1,10 +1,4 @@
-//
-//  WelcomeViewController.swift
-//  Flash Chat iOS13
-//
-//  Created by Angela Yu on 21/10/2019.
-//  Copyright © 2019 Angela Yu. All rights reserved.
-//
+
 
 import UIKit
 
@@ -18,11 +12,23 @@ class WelcomeViewController: UIViewController {
        titleTextAnimation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //MARK: Remove Navbar from this VC
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        //MARK: Appends Navbar when leaving this VC
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     private func titleTextAnimation(){
         
         titleLabel.text = ""
         var charIndex = 0.0
-        let titleText = "⚡️FlashChat"
+        let titleText = K.appName
         
         for letter in titleText{
             Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
